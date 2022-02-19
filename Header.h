@@ -45,6 +45,7 @@ void Initialize();
 //IO.cpp
 void SetupFiles();
 void CloseFiles();
+void ParPrint();
 
 //Geometry.cpp
 double Pnts2Ang(double, double, double, double);

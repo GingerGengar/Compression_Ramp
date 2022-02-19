@@ -20,9 +20,5 @@ void SetupFiles(){
 /*Close Files*/
 void CloseFiles(){XRmpOut.close(); YRmpOut.close(); ParOut.close();}
 
-#if False
 /*Prints Problem Parameters*/
-void ParPrint(){
-    ParOut << "#Domain Lower Bound, Domain Upper Bound, Number of Domain Partition, dx, Time Lower Bound, Time Upper Bound, Number of Time Partition, dt" << std::endl;
-    ParOut << domLB << " " << domUB << " " << sdom << " " << dx << " " << tLB << " " << tUB << " " << stime << " " << dt;}
-#endif
+void ParPrint(){ParOut << "#gamma, Number of Iterations, length dl, Initial Mach Number, xcowl, ycowl" << std::endl; ParOut << gam << " " << Iter << " " << dl << " " << M1 << " " << xcowl << " " << ycowl;}

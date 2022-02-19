@@ -1,0 +1,2 @@
+#gamma, Number of Iterations, length dl, Initial Mach Number, xcowl, ycowl
+1.4 500 0.01 2.5 5 3
