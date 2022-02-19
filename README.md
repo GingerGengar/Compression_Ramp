@@ -6,18 +6,40 @@ Tracked Quantities
     Static Temperature
         Potentially useful when considering the inlet to the compressor and combustor
 
+Loop Dependent Variables:
+current position
+current gradient 
+Turn Angle of the Ramp
+True Mach Number Before Shock
+Mach Normal to Shock Before
+Mach Nromal to Shock After
+True Mach Number After Shock
+dx
+
 Algorithm Plan:
     Have an initial position in x and y
     Have the coordinates of the cowl
     Have an end horizontal distance for how long the cowl has to be
-    Loop from the initial position to the final horizontal distance
+    Loop from the initial position to the specified maximum iteration count
+        Set the Mach number before shock as mach number after shock last iteration
+            update True Mach Number before shock
         Find the gradient of the line between the cowl and the current position
-        Determine Wave angle of the resulting shock wave
+            update current gradient
         Compute the turn angle of the ramp
+            Compute angle of shock angle based on current gradient
+            Use Explicit Equation and plug in shock angle
+            update turn angle of ramp
         Compute the Mach number normal to shock
-        Use Shock Jump relations for Mach number and all relevant quantities
-        Compute new direction of flow
-        Take one small "step" forward assuming straight line
+            Use the Explicit Equation
+            ipdate Mach Normal to Shock Before
+        Use Shock Jump relations for normal Mach number and all relevant quantities
+            Update Mach Normal to Shock After
+        Compute new true Mach number
+            Update True Mach Number After Shock
+        Compute value of dx
+            Update Value of dx
+        Take one small "step" forward assuming straight line (update current position)
+        Log position
 
 Programming Standards:
     Do not use printf for printing. Let us all be consistent and use iostream and their inherited class system
