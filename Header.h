@@ -1,3 +1,4 @@
+//Include Guards
 #ifndef Comp_Ramp
 #define Comp_Ramp
 
@@ -44,6 +45,21 @@ void Initialize();
 //IO.cpp
 void SetupFiles();
 void CloseFiles();
+
+//Geometry.cpp
+double Pnts2Ang(double, double, double, double);
+double Ang2Grad(double);
+double dxComp(double);
+
+//Gen_Rmp_Geo.cpp
+void XMarch();
+void GenRamp();
+
+//Shock.cpp
+double MachNormal(double, double);
+double ShockMach(double);
+double beta2theta(double, double);
+double MachTrue(double, double, double);
 
 
 #endif
