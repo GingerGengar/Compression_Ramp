@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in $( ls *.txt ); do 
+    echo mv $i $i.itex
+done
+

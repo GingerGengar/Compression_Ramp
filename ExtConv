@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in $( ls *.itex ); do 
+    echo mv $i $(echo $i | cut -f 1 -d '.').tex
+done
+

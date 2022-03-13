@@ -45,7 +45,8 @@
 ## Given gradient and dl determine dx
 
 # Algorithm Plan:
-   ## Have an initial position in x and y
+
+## Have an initial position in x and y
 
 ## Have the coordinates of the cowl
 
@@ -110,4 +111,3 @@
 ## Do not edit main directly or tamper with the variable declarations. Do your individual testing in "Testing"
 
 ## Do not use "using namespace as std" instead spell out std:: this is to avoid ambiguity in namespaces
-

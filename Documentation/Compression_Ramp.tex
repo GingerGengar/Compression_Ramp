@@ -1,0 +1,310 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{commath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{float}
+\usepackage[super]{nth}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\def\t{\theta}
+\def\a{\alpha}
+\def\be{\beta}
+\def\w{\omega}
+\def\la{\lambda}
+\def\g{\gamma}
+\def\f{\frac}
+\def\l{\left}
+\def\r{\right}
+\def\dst{\displaystyle}
+\def\b{\bar}
+\def\h{\hat}
+\def\ph{\phi}
+\def\d{\cdot}
+\def\n{\nabla}
+\def\p{\partial}
+\def\na{\nabla}
+%\def\lap{\mathcal{L}}
+\def\size{0.70}
+\def\sizem{0.28}
+\def\tabsize{0.9cm}
+\def\ltabsize{4.9cm}
+
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+\geometry{portrait, margin= 0.5in}
+
+\begin{document}
+
+\title{Compression Ramp Documentation}
+\author{Hans C. Suganda}
+\date{$25^{th}$ February 2022}
+%\maketitle
+\newpage
+
+\lstset{
+	columns=fullflexible,
+	frame=single,
+	breaklines=true,
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	keepspaces=true,                 
+	numbersep=5pt,                  
+	showspaces=false,               
+	showtabs=false,                  
+	tabsize=2
+}
+
+%\tableofcontents
+
+\begin{center}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Algorithm Plan}
+\begin{comment}
+\end{comment}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Determinable Quantities}
+\begin{comment}
+\end{comment}
+\begin{itemize}
+\item Mach Number: Important because it informs the oblique shock wave angle
+\item Static Pressure: It is important to know the static pressure at the start of the compression cowl and the static pressure at the end of the cowl so that we can determine stagnation pressure loss using the isentropic solutions and that is an important design performance metric
+\item Static Temperature: Potentially useful when considering the inlet to the compressor and combustor
+\end{itemize}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Loop Dependent Variables}
+\begin{comment}
+\end{comment}
+\begin{itemize}
+\item Current Step Position
+\item Current Step Angle
+\item old Step Angle theta
+\item New Step Angle Theta
+\item Turn Angle of the Ramp
+\item Gradient of the Ramp 
+\item True Mach Number Before Shock
+\item Mach Normal to Shock Before
+\item Mach Nromal to Shock After
+\item True Mach Number After Shock
+\item dx 
+\end{itemize}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Needed Functionality}
+\begin{comment}
+\end{comment}
+\begin{itemize}
+\item Find Angle between two points 
+\item From Angle determine gradient 
+\item Given gradient and dl determine dx
+\end{itemize}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Looping Procedure}
+\begin{comment}
+\end{comment}
+\begin{enumerate}
+\item Have an initial position in x and y
+\item Have the coordinates of the cowl
+\item Loop from the initial position to the specified maximum iteration count
+\item Update Certain Input Variables
+\item Set the Mach number before shock as mach number after shock last iteration
+\item Set the old angle theta as the new angle theta from last iteration
+\item Find the angle of the line between the cowl and the current position
+\item update current angle
+\item Compute the Mach number normal to shock
+\item Use the Explicit Equation
+\item update Mach Normal to Shock Before
+\item Use Shock Jump relations for normal Mach number and all relevant quantities
+\item Update Mach Normal to Shock After
+\item Compute the turn angle of the ramp
+\item Use Explicit Equation and plug in shock angle
+\item update turn angle of ramp
+\item Compute new true Mach number
+\item Update True Mach Number After Shock
+\item Find Gradient of current ramp
+\item new angle theta is the old + turn angle
+\item Use Basic Trigonometry to compute current gradient of ramp
+\item Update Value of the gradient of ramp
+\item Compute value of dx
+\item Update Value of dx
+\item Take one small "step" forward assuming straight line (update current position)
+\item From Gradient of the Ramp and current position,
+\item increment x by dx
+\item increment y by gradient x dx
+\item Log position and probably more quantities of interest
+\end{enumerate}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Programming Standards}
+\begin{comment}
+\end{comment}
+\begin{itemize}
+\item Do not use printf for printing. Let us all be consistent and use iostream and their inherited class system
+\item Do not edit main directly or tamper with the variable declarations. Do your individual testing in "Testing"
+\item Do not use "using namespace as std" instead spell out std:: this is to avoid ambiguity in namespaces
+\end{itemize}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Programming Implementation}
+\begin{comment}
+\end{comment}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Header.h}
+\begin{comment}
+\end{comment}
+\input{../Header.tex}
+\lstinputlisting[language=C++]{../Header.h}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Var\_Setup.cpp}
+\begin{comment}
+\end{comment}
+\input{../Var_Setup.tex}
+\lstinputlisting[language=C++]{../Var_Setup.cpp}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Main.cpp}
+\begin{comment}
+\end{comment}
+\input{../Main.tex}
+\lstinputlisting[language=C++]{../Main.cpp}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Init.cpp}
+\begin{comment}
+\end{comment}
+\input{../Init.tex}
+\lstinputlisting[language=C++]{../Init.cpp}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{IO.cpp}
+\begin{comment}
+\end{comment}
+\input{../IO.tex}
+\lstinputlisting[language=C++]{../IO.cpp}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Gen\_Rmp\_Geo.cpp}
+\begin{comment}
+\end{comment}
+\input{../Gen_Rmp_Geo.tex}
+\lstinputlisting[language=C++]{../Gen_Rmp_Geo.cpp}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Geometry.cpp}
+\begin{comment}
+\end{comment}
+\input{../Geometry.tex}
+\lstinputlisting[language=C++]{../Geometry.cpp}
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Shock.cpp}
+\begin{comment}
+\end{comment}
+\input{../Shock.tex}
+\lstinputlisting[language=C++]{../Shock.cpp}
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Build Tools}
+\begin{comment}
+\end{comment}
+\input{../Makefilei.tex}
+\lstinputlisting[language=bash]{../Makefile}
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Post-Processing Utilities}
+\begin{comment}
+\end{comment}
+\input{../Ramp_Visual.tex}
+\lstinputlisting[language=Python]{../Ramp_Visual.py}
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\end{center}
+
+\end{document}
+
+

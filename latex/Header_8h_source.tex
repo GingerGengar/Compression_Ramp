@@ -1,0 +1,71 @@
+\hypertarget{Header_8h_source}{}\doxysection{Header.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//Include Guards}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef Comp\_Ramp}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define Comp\_Ramp}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{//Library Includes}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//File Naming}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define XFileName "{}XRamp.txt"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define YFileName "{}YRamp.txt"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define ParamName "{}Parameter.txt"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//Variable Prototypes}}
+\DoxyCodeLine{17 \textcolor{keyword}{extern} std::ofstream XRmpOut;}
+\DoxyCodeLine{18 \textcolor{keyword}{extern} std::ofstream YRmpOut;}
+\DoxyCodeLine{19 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} gam;}
+\DoxyCodeLine{20 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} xo; }
+\DoxyCodeLine{21 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} yo;}
+\DoxyCodeLine{22 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} xcowl; }
+\DoxyCodeLine{23 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} ycowl;}
+\DoxyCodeLine{24 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} Iter; }
+\DoxyCodeLine{25 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} dl;}
+\DoxyCodeLine{26 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} dx;}
+\DoxyCodeLine{27 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} xc; }
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} yc;}
+\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} AngCowl;}
+\DoxyCodeLine{30 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} Oalp; }
+\DoxyCodeLine{31 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} Nalp;}
+\DoxyCodeLine{32 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} RmpGrad;}
+\DoxyCodeLine{33 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} theta;}
+\DoxyCodeLine{34 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} M1;}
+\DoxyCodeLine{35 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} Mn1;}
+\DoxyCodeLine{36 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} M2;}
+\DoxyCodeLine{37 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} Mn2;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{//Function Prototypes}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{//Init.cpp}}
+\DoxyCodeLine{43 \textcolor{keywordtype}{void} Initialize();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{//IO.cpp}}
+\DoxyCodeLine{46 \textcolor{keywordtype}{void} SetupFiles();}
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} CloseFiles();}
+\DoxyCodeLine{48 \textcolor{keywordtype}{void} ParPrint();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{//Geometry.cpp}}
+\DoxyCodeLine{51 \textcolor{keywordtype}{double} Pnts2Ang(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double});}
+\DoxyCodeLine{52 \textcolor{keywordtype}{double} Ang2Grad(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{53 \textcolor{keywordtype}{double} dxComp(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{//Gen\_Rmp\_Geo.cpp}}
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} XMarch();}
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} GenRamp();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{//Shock.cpp}}
+\DoxyCodeLine{60 \textcolor{keywordtype}{double} MachNormal(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double});}
+\DoxyCodeLine{61 \textcolor{keywordtype}{double} ShockMach(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{62 \textcolor{keywordtype}{double} beta2theta(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double});}
+\DoxyCodeLine{63 \textcolor{keywordtype}{double} MachTrue(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double});}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

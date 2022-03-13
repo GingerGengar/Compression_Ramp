@@ -1,0 +1,60 @@
+\hypertarget{md_README_autotoc_md1}{}\doxysection{Mach Number}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsection{Mach Number is important because it informs the oblique shock wave angle}\label{md_README_autotoc_md2}
+\hypertarget{md_README_autotoc_md3}{}\doxysection{Static Pressure}\label{md_README_autotoc_md3}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{It is important to know the static pressure at the start of the compression cowl and the static pressure at the end of the cowl so that we can determine stagnation pressure loss using the isentropic solutions and that is an important design performance metric}\label{md_README_autotoc_md4}
+\hypertarget{md_README_autotoc_md5}{}\doxysection{Static Temperature}\label{md_README_autotoc_md5}
+\hypertarget{md_README_autotoc_md6}{}\doxysubsection{Potentially useful when considering the inlet to the compressor and combustor}\label{md_README_autotoc_md6}
+\hypertarget{md_README_autotoc_md7}{}\doxysection{Loop Dependent Variables\+:}\label{md_README_autotoc_md7}
+\hypertarget{md_README_autotoc_md8}{}\doxysubsection{current position}\label{md_README_autotoc_md8}
+\hypertarget{md_README_autotoc_md9}{}\doxysubsection{current angle}\label{md_README_autotoc_md9}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsection{old angle theta}\label{md_README_autotoc_md10}
+\hypertarget{md_README_autotoc_md11}{}\doxysubsection{new angle theta}\label{md_README_autotoc_md11}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsection{Turn Angle of the Ramp}\label{md_README_autotoc_md12}
+\hypertarget{md_README_autotoc_md13}{}\doxysubsection{Gradient of the Ramp}\label{md_README_autotoc_md13}
+\hypertarget{md_README_autotoc_md14}{}\doxysubsection{True Mach Number Before Shock}\label{md_README_autotoc_md14}
+\hypertarget{md_README_autotoc_md15}{}\doxysubsection{Mach Normal to Shock Before}\label{md_README_autotoc_md15}
+\hypertarget{md_README_autotoc_md16}{}\doxysubsection{Mach Nromal to Shock After}\label{md_README_autotoc_md16}
+\hypertarget{md_README_autotoc_md17}{}\doxysubsection{True Mach Number After Shock}\label{md_README_autotoc_md17}
+\hypertarget{md_README_autotoc_md18}{}\doxysubsection{dx}\label{md_README_autotoc_md18}
+\hypertarget{md_README_autotoc_md19}{}\doxysection{Needed Functionality\+:}\label{md_README_autotoc_md19}
+\hypertarget{md_README_autotoc_md20}{}\doxysubsection{Find Angle between two points}\label{md_README_autotoc_md20}
+\hypertarget{md_README_autotoc_md21}{}\doxysubsection{From Angle determine gradient}\label{md_README_autotoc_md21}
+\hypertarget{md_README_autotoc_md22}{}\doxysubsection{Given gradient and dl determine dx}\label{md_README_autotoc_md22}
+\hypertarget{md_README_autotoc_md23}{}\doxysection{Algorithm Plan\+:}\label{md_README_autotoc_md23}
+\hypertarget{md_README_autotoc_md24}{}\doxysubsection{Have an initial position in x and y}\label{md_README_autotoc_md24}
+\hypertarget{md_README_autotoc_md25}{}\doxysubsection{Have the coordinates of the cowl}\label{md_README_autotoc_md25}
+\hypertarget{md_README_autotoc_md26}{}\doxysubsection{Loop from the initial position to the specified maximum iteration count}\label{md_README_autotoc_md26}
+\hypertarget{md_README_autotoc_md27}{}\doxysubsubsection{Update Certain Input Variables}\label{md_README_autotoc_md27}
+\hypertarget{md_README_autotoc_md28}{}\doxyparagraph{Set the Mach number before shock as mach number after shock last iteration}\label{md_README_autotoc_md28}
+\hypertarget{md_README_autotoc_md29}{}\doxyparagraph{Set the old angle theta as the new angle theta from last iteration}\label{md_README_autotoc_md29}
+\hypertarget{md_README_autotoc_md30}{}\doxysubsubsection{Find the angle of the line between the cowl and the current position}\label{md_README_autotoc_md30}
+\hypertarget{md_README_autotoc_md31}{}\doxyparagraph{update current angle}\label{md_README_autotoc_md31}
+\hypertarget{md_README_autotoc_md32}{}\doxysubsubsection{Compute the Mach number normal to shock}\label{md_README_autotoc_md32}
+\hypertarget{md_README_autotoc_md33}{}\doxyparagraph{Use the Explicit Equation}\label{md_README_autotoc_md33}
+\hypertarget{md_README_autotoc_md34}{}\doxyparagraph{update Mach Normal to Shock Before}\label{md_README_autotoc_md34}
+\hypertarget{md_README_autotoc_md35}{}\doxysubsubsection{Use Shock Jump relations for normal Mach number and all relevant quantities}\label{md_README_autotoc_md35}
+\hypertarget{md_README_autotoc_md36}{}\doxyparagraph{Update Mach Normal to Shock After}\label{md_README_autotoc_md36}
+\hypertarget{md_README_autotoc_md37}{}\doxysubsubsection{Compute the turn angle of the ramp}\label{md_README_autotoc_md37}
+\hypertarget{md_README_autotoc_md38}{}\doxyparagraph{Use Explicit Equation and plug in shock angle}\label{md_README_autotoc_md38}
+\hypertarget{md_README_autotoc_md39}{}\doxyparagraph{update turn angle of ramp}\label{md_README_autotoc_md39}
+\hypertarget{md_README_autotoc_md40}{}\doxysubsubsection{Compute new true Mach number}\label{md_README_autotoc_md40}
+\hypertarget{md_README_autotoc_md41}{}\doxyparagraph{Update True Mach Number After Shock}\label{md_README_autotoc_md41}
+\hypertarget{md_README_autotoc_md42}{}\doxysubsubsection{Find Gradient of current ramp}\label{md_README_autotoc_md42}
+\hypertarget{md_README_autotoc_md43}{}\doxyparagraph{new angle theta is the old + turn angle}\label{md_README_autotoc_md43}
+\hypertarget{md_README_autotoc_md44}{}\doxyparagraph{Use Basic Trigonometry to compute current gradient of ramp}\label{md_README_autotoc_md44}
+\hypertarget{md_README_autotoc_md45}{}\doxyparagraph{Update Value of the gradient of ramp}\label{md_README_autotoc_md45}
+\hypertarget{md_README_autotoc_md46}{}\doxysubsubsection{Compute value of dx}\label{md_README_autotoc_md46}
+\hypertarget{md_README_autotoc_md47}{}\doxyparagraph{Update Value of dx}\label{md_README_autotoc_md47}
+\hypertarget{md_README_autotoc_md48}{}\doxysubsubsection{Take one small \char`\"{}step\char`\"{} forward assuming straight line (update current position)}\label{md_README_autotoc_md48}
+\hypertarget{md_README_autotoc_md49}{}\doxyparagraph{From Gradient of the Ramp and current position,}\label{md_README_autotoc_md49}
+\label{md_README_autotoc_md50}%
+\Hypertarget{md_README_autotoc_md50}%
+ \doxysubparagraph*{increment x by dx}
+
+\label{md_README_autotoc_md51}%
+\Hypertarget{md_README_autotoc_md51}%
+ \doxysubparagraph*{increment y by gradient x dx}\hypertarget{md_README_autotoc_md52}{}\doxysubsubsection{Log position and probably more quantities of interest}\label{md_README_autotoc_md52}
+\hypertarget{md_README_autotoc_md53}{}\doxysection{Programming Standards\+:}\label{md_README_autotoc_md53}
+\hypertarget{md_README_autotoc_md54}{}\doxysubsection{Do not use printf for printing. Let us all be consistent and use iostream and their inherited class system}\label{md_README_autotoc_md54}
+\hypertarget{md_README_autotoc_md55}{}\doxysubsection{Do not edit main directly or tamper with the variable declarations. Do your individual testing in \char`\"{}\+Testing\char`\"{}}\label{md_README_autotoc_md55}
+\hypertarget{md_README_autotoc_md56}{}\doxysubsection{Do not use \char`\"{}using namespace as std\char`\"{} instead spell out std\+:: this is to avoid ambiguity in namespaces}\label{md_README_autotoc_md56}
