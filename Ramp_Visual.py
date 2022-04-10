@@ -10,11 +10,9 @@ yramp = np.genfromtxt('YRamp.txt')
 
 #Plot Result
 figure, axis = plt.subplots()
-
 #Plot Ramp Geometry and Cowl
 axis.plot(xramp,yramp, '-k', label='Ramp Geometry')
 axis.plot(param[4], param[5], 'rx', label = 'Cowl')
-
 #Plot Settings
 axis.set_xlabel('x-coordinate (m)')
 axis.set_ylabel('y-coordinate (m)')

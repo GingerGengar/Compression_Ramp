@@ -16,6 +16,9 @@ double beta2theta(double Mach, double beta){
 double MachTrue(double NMach, double beta, double theta){
     return NMach/sin(beta-theta);}
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/*Start New Code*/
+
 /*First Commonly Recurring Constant in Shocks*/
 double ShoCon1(double Mach) { return (1 + (2. * gam) / (gam + 1) * (pow(Mach, 2.) - 1)); }
 
@@ -24,14 +27,18 @@ double ShoCon2(double Mach) { return ((2 + (gam - 1) * pow(Mach, 2)) / ((gam + 1
 
 /*Computes the Static Pressure after a normal Shock Using Static Pressure*/
 double PAftNShock(double Mach, double Pressure) {
-    return Pressure * (1. + (2. * gam) / (gam + 1.) * (pow(Mach, 2.) - 1.));}
+    return Pressure * (1. + (2. * gam) / (gam + 1.) * (pow(Mach, 2.) - 1.));
+}
 
 /*Computes the Static Temperature afer a Normal Shock using static temperature before shock*/
 double TAftNShock(double Mach, double Temperature) {
-    return Temperature * ShoCon1(Mach) * ShoCon2(Mach);}
+    return Temperature * ShoCon1(Mach) * ShoCon2(Mach);
+}
 
 /*Computes the Stagnation Pressure After a Normal Shock using Stagnation Pressure Before shock*/
-double P0AftNShock(double Mach, double Pressure){
-    return Pressure * pow((ShoCon1(Mach)), (-1. / (gam - 1.))) * pow((ShoCon2(Mach))
-        ,(-gam / (gam - 1.)));}
+double P0AftNShock(double Mach, double Pressure) {
+    return Pressure * pow((ShoCon1(Mach)), (-1. / (gam - 1.))) * pow((ShoCon2(Mach)), (-gam / (gam - 1.)));
+}
 
+/*End New Code*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////

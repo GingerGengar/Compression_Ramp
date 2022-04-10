@@ -31,14 +31,17 @@ double RmpGrad;
 //Current Turn Angle of Ramp
 double theta;
 
+////////////////////////////////////////////////////////////////////////////
+/*Start New Code*/
+
 //Static Pressure at entrance of diffuser
-double P1;
+double P1
 
 //Static Temperature at entrance of diffuser
-double T1;
+double T1
 
-//Stagnation Pressure
-double P01;
+/*End New Code*/
+////////////////////////////////////////////////////////////////////////////
 
 //True Mach Number before Shock
 double M1;

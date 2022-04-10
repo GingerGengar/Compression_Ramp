@@ -13,16 +13,11 @@
 #define XFileName "XRamp.txt"
 #define YFileName "YRamp.txt"
 #define ParamName "Parameter.txt"
-#define StaticPressName "StaticPressure.txt"
-#define StagPressName "StagnationPressure.txt"
-#define TempName "Temperature.txt"
+
 
 //Variable Prototypes
 extern std::ofstream XRmpOut;
 extern std::ofstream YRmpOut;
-extern std::ofstream SttcPress;
-extern std::ofstream StagPress;
-extern std::ofstream TempOut;
 extern double gam;
 extern double xo; 
 extern double yo;
@@ -42,9 +37,7 @@ extern double M1;
 extern double Mn1;
 extern double M2;
 extern double Mn2;
-extern double P1;
-extern double T1;
-extern double P01;
+
 
 //Function Prototypes
 
@@ -70,10 +63,13 @@ double MachNormal(double, double);
 double ShockMach(double);
 double beta2theta(double, double);
 double MachTrue(double, double, double);
+////////////////////////////////////////////////////////////////////////////
+/*Start New Code*/
 double ShoCon1(double);
 double ShoCon2(double);
 double PAftNShock(double, double);
 double TAftNShock(double, double);
 double P0AftNShock(double, double);
-
+/*End New Code*/
+////////////////////////////////////////////////////////////////////////////
 #endif
