@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.28)  13 MAR 2022 12:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.28)  17 APR 2022 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -495,13 +495,13 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 203.
  (../Header.h [4])
-Excluding 'comment' comment. (../Var_Setup.tex) (../Var_Setup.cpp) [5]
+Excluding 'comment' comment. (../Var_Setup.tex) (../Var_Setup.cpp [5])
 Excluding 'comment' comment. (../Main.tex) (../Main.cpp)
 Excluding 'comment' comment. (../Init.tex) (../Init.cpp)
-Excluding 'comment' comment. (../IO.tex) (../IO.cpp) [6]
-Excluding 'comment' comment. (../Gen_Rmp_Geo.tex) (../Gen_Rmp_Geo.cpp)
+Excluding 'comment' comment. (../IO.tex [6]) (../IO.cpp)
+Excluding 'comment' comment. (../Gen_Rmp_Geo.tex) (../Gen_Rmp_Geo.cpp [7])
 Excluding 'comment' comment. (../Geometry.tex) (../Geometry.cpp)
-Excluding 'comment' comment. (../Shock.tex) (../Shock.cpp [7]) [8]
+Excluding 'comment' comment. (../Shock.tex) (../Shock.cpp [8]) [9]
 Excluding 'comment' comment. (../Makefilei.tex)
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -514,20 +514,20 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line
 
 (/usr/share/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) [9]
+)) [10]
 Excluding 'comment' comment. (../Ramp_Visual.tex)
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (../Ramp_Visual.py)
-[10] (./Compression_Ramp.aux)
+[11] (./Compression_Ramp.aux)
 Package rerunfilecheck Info: File `Compression_Ramp.out' has not changed.
 (rerunfilecheck)             Checksum: 9016EB3FD791E1A24AF2DDE5AC445759;2320.
  ) 
 Here is how much of TeX's memory you used:
- 13419 strings out of 478353
- 198825 string characters out of 5854634
- 1032396 words of memory out of 5000000
- 30966 multiletter control sequences out of 15000+600000
+ 13573 strings out of 478353
+ 201037 string characters out of 5854634
+ 1106396 words of memory out of 5000000
+ 31012 multiletter control sequences out of 15000+600000
  410458 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,64p,546b,2177s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -538,10 +538,10 @@ c/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Compression_Ramp.pdf (10 pages, 121977 bytes).
+Output written on Compression_Ramp.pdf (11 pages, 131299 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 525 compressed objects within 6 object streams
- 340 named destinations out of 1000 (max. 500000)
+ 691 PDF objects out of 1000 (max. 8388607)
+ 657 compressed objects within 7 object streams
+ 448 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
