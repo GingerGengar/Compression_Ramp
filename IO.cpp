@@ -36,4 +36,6 @@ void SetupFiles(){
 void CloseFiles(){XRmpOut.close(); YRmpOut.close(); ParOut.close();}
 
 /*Prints Problem Parameters*/
-void ParPrint(){ParOut << "#gamma, Number of Iterations, length dl, Initial Mach Number, xcowl, ycowl" << std::endl; ParOut << gam << " " << Iter << " " << dl << " " << M1 << " " << xcowl << " " << ycowl;}
+void ParPrint(){ParOut << "#gamma, Number of Iterations, length dl, Initial Mach Number, xcowl, ycowl"
+    << std::endl; ParOut << gam << " " << Iter << " " << dl << " " << M1 << " " 
+    << xcowl << " " << ycowl;}
